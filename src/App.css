@@ -1,38 +1,179 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 40px 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Wrapper */
+.wrapper {
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Card umum */
+.card {
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Profile Card */
+.profile-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h1 {
+  margin: 0 0 10px;
+}
+
+.profile-info p {
+  margin: 0 0 15px;
+  color: #ccc;
+}
+
+.profile-avatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #2563eb;
+  object-fit: cover;
+}
+
+/* Buttons */
+.detail-buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 8px;   /* jarak lebih rapat */
+  margin-top: 12px;
+}
+
+.btn {
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  min-width: 120px;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.btn-download {
+  background: #2563eb;
+  color: #fff;
+}
+
+.btn-download:hover {
+  background: #1e4ecf;
+}
+
+.btn-back {
+  background: #333;
+  color: #fff;
+}
+
+.btn-back:hover {
+  background: #111;
+}
+
+/* Projects Card */
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-item {
+  background: #2a2a2a;
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.project-item:hover {
+  background: #333;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.project-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.project-item h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.project-item p {
+  margin: 3px 0 0;
+  font-size: 12px;
+  color: #bbb;
+}
+
+/* Contact Card */
+.contact-card {
+  text-align: center;
+}
+
+.social-links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Detail Project Page */
+.detail-card {
+  background: #1c1c1c;
+  width: 100%;
+  max-width: 450px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+.detail-logo {
+  width: 80px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.detail-desc {
+  margin: 15px 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ddd;
 }
