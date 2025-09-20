@@ -1,67 +1,82 @@
-/* Global */
+/* ================================ */
+/* GLOBAL CSS */
+/* ================================ */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #111;
+  background-color: #111;
   color: #fff;
-  display: flex;
-  justify-content: center;
-  /* Sesuaikan padding untuk semua layar */
-  padding: 20px 15px; 
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
-/* Wrapper */
-.wrapper {
-  max-width: 100%;
-  width: 100%;
+.main-container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  padding: 20px 15px;
 }
 
-/* Card umum */
+.wrapper {
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card: Gaya dasar untuk setiap "kartu" (card) di halaman. */
 .card {
   background: #1c1c1c;
-  padding: 16px;
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Profile Card */
-.profile-card {
+/* ------------------------------------- */
+/* NAVBAR */
+/* ------------------------------------- */
+.navbar-card {
+  background-color: #1c1c1c;
+  padding: 10px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
   display: flex;
-  flex-direction: column; /* default mobile: stack */
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
-  gap: 12px;
+  max-width: 500px;
+  width: 100%;
 }
 
-.profile-info h1 {
-  margin: 0 0 8px;
-  font-size: 18px;
-}
-
-.profile-info p {
-  margin: 0 0 12px;
-  color: #ccc;
-  font-size: 14px;
-}
-
-.profile-avatar img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 3px solid #2563eb;
-  object-fit: cover;
-}
-
-/* Buttons */
-.detail-buttons {
+.navbar-links {
   display: flex;
-  flex-direction: column;
+  gap: 15px;
+}
+
+.navbar-item {
+  color: #888;
+  transition: color 0.2s;
+  display: flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 10px;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.navbar-item:hover {
+  color: #fff;
+  background-color: #2a2a2a;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .btn {
@@ -74,8 +89,210 @@ body {
   min-width: 110px;
   text-align: center;
   transition: background 0.2s;
-  /* Tambahkan display block untuk tombol di HP */
-  display: block; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: none;
+}
+
+.btn-download-cv {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.btn-download-cv:hover {
+  background-color: #1e4ecf;
+}
+
+/* ------------------------------------- */
+/* PROFILE CARD */
+/* ------------------------------------- */
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 20px;
+  position: relative; /* Penting untuk positioning absolute */
+}
+
+.profile-status {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #888;
+  font-size: 14px;
+}
+
+.profile-role {
+  color: #888;
+  font-size: 14px;
+}
+
+.status-work {
+  position: absolute; /* Posisikan secara absolut di dalam .profile-card */
+  top: 20px; /* Jarak dari atas */
+  right: 20px; /* Jarak dari kanan */
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #28a745;
+  font-weight: bold;
+}
+
+.work-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #28a745;
+  border-radius: 50%;
+}
+
+.profile-info-content {
+  display: flex;
+  flex-direction: column; /* Default: mobile, kolom */
+  align-items: center; /* Pusatkan di mobile */
+  gap: 20px;
+  width: 100%;
+}
+
+.profile-text {
+  flex-grow: 1;
+}
+
+.profile-info-content h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.profile-info-content p {
+  margin: 0;
+  color: #ccc;
+  font-size: 16px;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #2563eb;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+/* ------------------------------------- */
+/* PROJECTS CARD */
+/* ------------------------------------- */
+.projects-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.projects-header h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-item {
+  background: #2a2a2a;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  color: white;
+}
+
+.project-item:hover {
+  background: #333;
+}
+
+.project-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.project-item h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.project-item p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #bbb;
+}
+
+/* ------------------------------------- */
+/* CONTACT CARD */
+/* ------------------------------------- */
+.contact-card {
+  text-align: center;
+}
+
+.social-links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* ------------------------------------- */
+/* DETAIL CARD */
+/* ------------------------------------- */
+.detail-card {
+  text-align: center;
+}
+
+.detail-logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.detail-desc {
+  margin: 12px 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+.detail-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
 }
 
 .btn-download {
@@ -96,122 +313,53 @@ body {
   background: #111;
 }
 
-/* Projects Card */
-.projects-header {
-  display: flex;
-  flex-direction: column; /* mobile */
-  gap: 6px;
-  align-items: flex-start;
-  margin-bottom: 12px;
-}
-
-.project-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.project-item {
-  background: #2a2a2a;
-  padding: 12px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  cursor: pointer;
-  transition: background 0.2s;
-  text-decoration: none;
-  color: white;
-}
-
-.project-item:hover {
-  background: #333;
-}
-
-.project-item img {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.project-item h3 {
-  margin: 0;
-  font-size: 14px;
-}
-
-.project-item p {
-  margin: 2px 0 0;
-  font-size: 12px;
-  color: #bbb;
-}
-
-/* Contact Card */
-.contact-card {
-  text-align: center;
-}
-
-.social-links {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-}
-
-/* Detail Project Page */
-.detail-card {
-  background: #1c1c1c;
-  width: 100%;
-  max-width: 450px;
-  margin: 20px auto; /* bikin selalu center */
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.detail-logo {
-  width: 70px;
-  height: auto;
-  margin-bottom: 12px;
-}
-
-.detail-desc {
-  margin: 12px 0;
-  font-size: 13px;
-  line-height: 1.5;
-  color: #ddd;
-}
-
-/* Perbaikan Media Query */
+/* ------------------------------------- */
+/* RESPONSIVE */
+/* ------------------------------------- */
 @media (min-width: 600px) {
   .wrapper {
-    max-width: 600px; /* Lebar yang lebih konsisten untuk desktop */
-  }
-
-  .profile-card {
-    flex-direction: row;
-    text-align: left;
-    align-items: center; /* Pastikan rata tengah vertikal */
+    max-width: 600px;
   }
   
-  .profile-info {
-    flex-grow: 1; /* Agar info mengisi ruang sisa */
+  .navbar-card {
+    max-width: 600px;
   }
 
-  .projects-header {
+  .profile-info-content {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    text-align: left;
   }
-  
+
+  .profile-text {
+    flex-grow: 1;
+  }
+
+  .profile-avatar {
+    order: 2;
+    margin-left: 20px;
+  }
+
+  .status-work {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin: 0;
+  }
+
+  .profile-status {
+    display: block; /* Mengubah display agar positioning absolute bekerja dengan baik */
+    width: 100%;
+    text-align: left;
+  }
+
+  .profile-role {
+    margin-bottom: 10px; /* Memberi sedikit jarak */
+  }
+
   .detail-buttons {
-    flex-direction: row; /* Tombol berdampingan di desktop */
+    flex-direction: row;
     justify-content: center;
-  }
-  
-  .btn {
-    min-width: 150px; /* Lebar tombol lebih besar */
   }
 }

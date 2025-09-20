@@ -1,102 +1,22 @@
-/* App.css */
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 40px;
+/* ================================ */
+/* GLOBAL CSS - TIDAK ADA ATURAN KOMPONEN DI SINI */
+/* ================================ */
+html, body {
+  margin: 0;
+  font-family: Arial, sans-serif;
   background-color: #111;
-}
-
-.card {
-  background-color: #1f1f1f;
-  border-radius: 16px;
-  padding: 24px;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-
-.card h1 {
-  font-size: 20px;
-  margin: 8px 0;
-}
-
-.card p {
-  font-size: 14px;
-  color: #aaa;
-}
-
-.project {
-  background: #2b2b2b;
-  padding: 12px;
-  border-radius: 8px;
-  margin-top: 12px;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.project:hover {
-  background: #3a3a3a;
+  color: #fff;
+  /* Mencegah pergeseran horizontal yang sering terjadi di iOS */
+  overflow-x: hidden;
+  /* Memastikan halaman minimal setinggi viewport */
+  min-height: 100vh;
 }
 
 body {
-  margin: 0;
-  background-color: #111; /* background gelap */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
-}
-
-.detail-card {
-  text-align: center;
-  padding: 20px;
-}
-.detail-img {
-  max-width: 300px;
-  margin: 0 auto 20px;
-  border-radius: 10px;
-}
-.button-group {
+  /* Mengatur display flex pada body untuk memusatkan konten secara keseluruhan */
   display: flex;
-  flex-direction: column; /* Susun vertikal */
-  align-items: center;
-  gap: 8px; /* Jarak antar tombol */
-  margin-top: 15px;
+  justify-content: center;
+  align-items: flex-start;
+  /* Tambahkan padding di sini untuk memberikan ruang dari tepi layar */
+  padding: 20px 15px; 
 }
-
-.btn-download {
-  background-color: #2563eb;
-  color: white;
-  padding: 8px 22px;
-  border: none;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.2s ease-in-out;
-  width: 120px;
-  text-align: center;
-}
-
-.btn-download:hover {
-  background-color: #1d4ed8;
-}
-
-.btn-back {
-  background-color: #374151;
-  color: white;
-  padding: 7px 20px;
-  border: none;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-  width: 120px;
-  text-align: center;
-  transition: background 0.2s ease-in-out;
-}
-
-.btn-back:hover {
-  background-color: #111827;
-}
-
