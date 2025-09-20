@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 
 // avatar
@@ -24,7 +24,11 @@ function ProjectDetail({ title, description, logo, website, isDownload }) {
       <p className="detail-desc">{description}</p>
       <div className="detail-buttons">
         {isDownload ? (
-          <a href={website} download className="btn btn-download">
+          <a
+            href={process.env.PUBLIC_URL + website}
+            download
+            className="btn btn-download"
+          >
             Download
           </a>
         ) : (
@@ -57,7 +61,11 @@ function Home() {
             Information Systems student with interest in web-based systems and
             focused on using technology to improve efficiency.
           </p>
-          <a href="/downloads/CV.pdf" download className="btn btn-download">
+          <a
+            href={process.env.PUBLIC_URL + "/downloads/CV.pdf"}
+            download
+            className="btn btn-download"
+          >
             Download CV
           </a>
         </div>
@@ -157,7 +165,7 @@ function App() {
               title="Print and Go"
               description="Print and Go is a self-service printing system designed to modernize traditional printing shops. The system allows customers to upload documents online, make digital payments, and collect their prints without direct assistance from staff. This reduces queues, improves efficiency, and enables businesses to operate with fewer resources. For printing shop owners, Print and Go offers sales tracking, automated price calculation, and better transaction management, helping them adapt to the growing demand for fast, contactless services."
               logo={printLogo}
-              website="/downloads/printandgo.zip"
+              website="/downloads/print-and-go.zip"
               isDownload={true}
             />
           }
