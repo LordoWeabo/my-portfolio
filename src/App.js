@@ -165,8 +165,8 @@ function App() {
               title="Print and Go"
               description="Print and Go is a self-service printing system designed to modernize traditional printing shops. The system allows customers to upload documents online, make digital payments, and collect their prints without direct assistance from staff. This reduces queues, improves efficiency, and enables businesses to operate with fewer resources. For printing shop owners, Print and Go offers sales tracking, automated price calculation, and better transaction management, helping them adapt to the growing demand for fast, contactless services."
               logo={printLogo}
-              website="https://drive.google.com/file/d/13y80_eE5cvY4VzcvzY5HH3FASUP3bJf8/view?usp=sharing"
-              isDownload={true}
+              website="https://drive.google.com/uc?export=download&id=13y80_eE5cvY4VzcvzY5HH3FASUP3bJf8"
+              isDownload={false}
             />
           }
         />

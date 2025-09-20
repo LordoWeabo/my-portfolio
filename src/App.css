@@ -6,7 +6,8 @@ body {
   color: #fff;
   display: flex;
   justify-content: center;
-  padding: 40px 15px;
+  /* Sesuaikan padding untuk semua layar */
+  padding: 20px 15px; 
 }
 
 /* Wrapper */
@@ -73,6 +74,8 @@ body {
   min-width: 110px;
   text-align: center;
   transition: background 0.2s;
+  /* Tambahkan display block untuk tombol di HP */
+  display: block; 
 }
 
 .btn-download {
@@ -160,14 +163,13 @@ body {
   background: #1c1c1c;
   width: 100%;
   max-width: 450px;
-  margin: 20px auto;   /* bikin selalu center */
+  margin: 20px auto; /* bikin selalu center */
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   text-align: center;
-  box-sizing: border-box; /* biar padding tidak bikin meluber */
+  box-sizing: border-box;
 }
-
 
 .detail-logo {
   width: 70px;
@@ -182,15 +184,20 @@ body {
   color: #ddd;
 }
 
-/* Responsive (tablet & desktop) */
+/* Perbaikan Media Query */
 @media (min-width: 600px) {
   .wrapper {
-    max-width: 500px;
+    max-width: 600px; /* Lebar yang lebih konsisten untuk desktop */
   }
 
   .profile-card {
     flex-direction: row;
     text-align: left;
+    align-items: center; /* Pastikan rata tengah vertikal */
+  }
+  
+  .profile-info {
+    flex-grow: 1; /* Agar info mengisi ruang sisa */
   }
 
   .projects-header {
@@ -198,22 +205,13 @@ body {
     justify-content: space-between;
     align-items: center;
   }
-}
-
-@media (min-width: 900px) {
-  body {
-    padding: 40px 20px;
+  
+  .detail-buttons {
+    flex-direction: row; /* Tombol berdampingan di desktop */
+    justify-content: center;
   }
-
-  .wrapper {
-    max-width: 700px;
-  }
-
-  .profile-info h1 {
-    font-size: 22px;
-  }
-
-  .profile-info p {
-    font-size: 15px;
+  
+  .btn {
+    min-width: 150px; /* Lebar tombol lebih besar */
   }
 }
